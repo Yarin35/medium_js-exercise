@@ -1,10 +1,23 @@
-const string = "hello world";
+const readline = require('readline');
 
-for (let i = 0; i < string.length; i ++) {
-    if (isNew(string[i], string, i)) {
-        calcul_percentage(string[i], string);
-    };
-};
+const readl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readl.question("Enter a string: ", (string) => {
+    if (string) {
+        for (let i = 0; i < string.length; i ++) {
+            if (isNew(string[i], string, i)) {
+                calcul_percentage(string[i], string);
+            };
+        };
+        readl.close();
+    } else
+        readl.close();
+});
+
+
 
 function isNew(char, string, index)
 {
